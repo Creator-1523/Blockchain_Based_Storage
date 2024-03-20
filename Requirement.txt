@@ -1,0 +1,30 @@
+npm install hardhat
+npx hardhat
+    -select (Create JavaScript Project) press enter
+    - yes
+    - yes for dependencies (npm install --save-dev "hardhat@^2.21.0" "@nomicfoundation/hardhat-toolbox@^4.0.0")
+
+NOTE : BELOW STEPS U AHVE TO FOLLOW WHEN U HAVE STARTED FROM SCRATCH 
+In contract Folder
+    copy/paste your contract from remix IDE if not done
+
+Scripts
+    deploy.js 
+
+Delete test Folder if present
+
+hardhat.config.js (modify)
+
+react app : npm init react-app client or npx install create-react-app client
+
+
+TO RUN PROJECT DIRECTLY
+
+step 1: Start hardhat Server= npm hardhat node (dont close this)
+Create localhost on Metamask and take any account from hardhat server add private key 
+
+step 2: Deploy Smart Contract if not : npx hardhat run --network localhost scripts/deploy.js
+step 3: cd client -> npm Start 
+
+
+
