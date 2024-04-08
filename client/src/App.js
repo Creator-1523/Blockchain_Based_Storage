@@ -5,6 +5,9 @@ import FileUpload from "./components/FileUpload";
 import Display from "./components/Display";
 import Modal from "./components/Modal";
 import "./App.css";
+import TextUpload from "./components/TextUpload";
+import DisplayText from "./components/DisplayText";
+import Main from "./components/Main";
 
 function App() {
   const [account, setAccount] = useState("");
@@ -31,8 +34,8 @@ function App() {
         console.log(address);
         setAccount(address);
 
-        const contractAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
-        const contract = new ethers.Contract(
+        const contractAddress = "0x62f9801858D5Ad0A32f2f613758CCdE7617E2a65";
+        const contract = new ethers.Contract( 
           contractAddress,
           Upload.abi,
           signer
@@ -49,7 +52,7 @@ function App() {
 
   return (
     <>
-     {!modalOpen && (
+     {/* {!modalOpen && (
         <button className="share" onClick={() => setModalOpen(true)}>
           Share
         </button>
@@ -58,7 +61,8 @@ function App() {
         modalOpen && (
           <Modal setModalOpen={setModalOpen} contract={contract}></Modal>
         )
-      }
+      } */}
+      
     <div className="App">
       <h1 style={{ color: "white" }}>File Sharing</h1>
       <div class="bg"></div>
@@ -66,8 +70,11 @@ function App() {
       <div class="bg bg3"></div>
 
       <p style={{ color: "white" }}>Account : {account}</p>
+      
       <FileUpload account={account} contract={contract}></FileUpload>
       <Display account={account} contract={contract}></Display>
+      <TextUpload account={account} contract={contract}></TextUpload>
+      <DisplayText account={account} contract={contract}></DisplayText>
     </div>
     </>
   );
