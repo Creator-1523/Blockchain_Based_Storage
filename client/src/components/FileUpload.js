@@ -6,8 +6,6 @@ const FileUpload = ({ contract, account }) => {
   const [file, setFile] = useState(null);
   const [fileName, setFileName] = useState(null);
 
-  //handle image or file =to upload the image on ipfs
-  //retrive file
 
   const handleSubmit = async (event) => {
     event.preventDefault();

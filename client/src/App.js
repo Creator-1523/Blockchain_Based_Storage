@@ -8,6 +8,7 @@ import "./App.css";
 import TextUpload from "./components/TextUpload";
 import DisplayText from "./components/DisplayText";
 import Main from "./components/Main";
+import ThreeButtons from "./components/Button";
 
 function App() {
   const [account, setAccount] = useState("");
@@ -34,8 +35,8 @@ function App() {
         console.log(address);
         setAccount(address);
 
-        const contractAddress = "0x62f9801858D5Ad0A32f2f613758CCdE7617E2a65";
-        const contract = new ethers.Contract( 
+        const contractAddress = "0x27893BD3e536D5bB56a9219c61EAf7bB15b7CA4b";
+        const contract = new ethers.Contract(
           contractAddress,
           Upload.abi,
           signer
@@ -52,30 +53,27 @@ function App() {
 
   return (
     <>
-     {/* {!modalOpen && (
+      {!modalOpen && (
         <button className="share" onClick={() => setModalOpen(true)}>
           Share
         </button>
       )}
-      {
-        modalOpen && (
-          <Modal setModalOpen={setModalOpen} contract={contract}></Modal>
-        )
-      } */}
-      
-    <div className="App">
-      <h1 style={{ color: "white" }}>File Sharing</h1>
-      <div class="bg"></div>
-      <div class="bg bg2"></div>
-      <div class="bg bg3"></div>
+      {modalOpen && (
+        <Modal setModalOpen={setModalOpen} contract={contract}></Modal>
+      )}
 
-      <p style={{ color: "white" }}>Account : {account}</p>
-      
-      <FileUpload account={account} contract={contract}></FileUpload>
-      <Display account={account} contract={contract}></Display>
-      <TextUpload account={account} contract={contract}></TextUpload>
-      <DisplayText account={account} contract={contract}></DisplayText>
-    </div>
+      <div className="App">
+        <h1 style={{ color: "white" }}>File Sharing</h1>
+        <div class="bg"></div>
+        <div class="bg bg2"></div>
+        <div class="bg bg3"></div>
+
+        <p style={{ color: "white" }}>Account : {account}</p>
+
+        <FileUpload account={account} contract={contract}></FileUpload>
+        <Display account={account} contract={contract}></Display>
+        <ThreeButtons></ThreeButtons>
+      </div>
     </>
   );
 }
